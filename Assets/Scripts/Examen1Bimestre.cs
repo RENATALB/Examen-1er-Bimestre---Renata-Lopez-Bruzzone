@@ -11,7 +11,8 @@ public class Examen1Bimestre : MonoBehaviour
     int periodoDeDias;
     int cantidadDeUnidades;
 
-    float costoTotalCombustible;
+    float costoCombustiblePorUnidad;
+    float costoCombustibleFlota;
     float porcentajeDescuento;
 
     void Start()
@@ -25,16 +26,18 @@ public class Examen1Bimestre : MonoBehaviour
         if (combustibleCargado < 100)
         {
             porcentajeDescuento = 0;
-            costoTotalCombustible = litrosPorDia * costo1Litro * (1 - porcentajeDescuento);
+            costoCombustiblePorUnidad = litrosPorDia * costo1Litro * (1 - porcentajeDescuento);
         }
 
         else if (combustibleCargado >= 100)
         {
             porcentajeDescuento = 0.2f;
-            costoTotalCombustible = litrosPorDia * costo1Litro * (1 - porcentajeDescuento);
+            costoCombustiblePorUnidad = litrosPorDia * costo1Litro * (1 - porcentajeDescuento);
         }
 
+        costoCombustibleFlota = costoCombustiblePorUnidad * cantidadDeUnidades;
 
-        Debug.Log("Una flota de "+ cantidadDeUnidades + "unidades trabajando durante " + periodoDeDias + "días implicará un gasto de "+ costoTotalCombustible + "pesos en concepto de combustible");
+
+        Debug.Log("Una flota de "+ cantidadDeUnidades + "unidades trabajando durante " + periodoDeDias + "días implicará un gasto de "+ costoCombustibleFlota + "pesos en concepto de combustible");
     }
 }
