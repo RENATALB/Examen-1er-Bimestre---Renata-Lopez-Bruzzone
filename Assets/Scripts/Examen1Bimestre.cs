@@ -26,13 +26,13 @@ public class Examen1Bimestre : MonoBehaviour
         if (combustibleCargado < 100)
         {
             porcentajeDescuento = 0;
-            costoCombustiblePorUnidad = litrosPorDia * costo1Litro * (1 - porcentajeDescuento);
+            costoCombustiblePorUnidad = litrosPorDia * costo1Litro * (1 - porcentajeDescuento) * periodoDeDias;
         }
 
         else if (combustibleCargado >= 100)
         {
             porcentajeDescuento = 0.2f;
-            costoCombustiblePorUnidad = litrosPorDia * costo1Litro * (1 - porcentajeDescuento);
+            costoCombustiblePorUnidad = litrosPorDia * costo1Litro * (1 - porcentajeDescuento) * periodoDeDias;
         }
 
         costoCombustibleFlota = costoCombustiblePorUnidad * cantidadDeUnidades;
