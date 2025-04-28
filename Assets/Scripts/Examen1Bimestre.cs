@@ -35,9 +35,9 @@ public class Examen1Bimestre : MonoBehaviour
             costoCombustiblePorUnidad = litrosPorDia * costo1Litro * (1 - porcentajeDescuento) * periodoDeDias;
         }
 
+
         costoCombustibleFlota = costoCombustiblePorUnidad * cantidadDeUnidades;
 
-
-        Debug.Log("Una flota de "+ cantidadDeUnidades + "unidades trabajando durante " + periodoDeDias + "días implicará un gasto de "+ costoCombustibleFlota + "pesos en concepto de combustible");
+        Debug.Log("Una flota de " + cantidadDeUnidades + "unidades trabajando durante " + periodoDeDias + "días implicará un gasto de " + costoCombustibleFlota + "pesos en concepto de combustible. Se ha aplicado un %" + porcentajeDescuento + " de descuento");
     }
 }
